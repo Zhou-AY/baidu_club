@@ -1,0 +1,33 @@
+/* 
+冒泡排序
+*/
+#include <iostream>
+using namespace std;
+template<typename T>
+
+void bubble_sort(T arr[], int len)
+{
+    int i, j;  T temp;
+    for (i = 0; i < len - 1; i++)
+        for (j = 0; j < len - 1 - i; j++)
+        if (arr[j] > arr[j + 1])
+        {
+            temp=arr[j+1];
+			arr[j+1]=arr[j];
+			arr[j]=temp;
+		}
+}
+int main()
+{
+    int arr[]={3,4,6,7,1,2,5,8,9};
+	int len = (int) sizeof(arr) / sizeof(*arr);
+    bubble_sort(arr, len);
+    for (int i = 0; i < len; i++)
+        cout << arr[i] << ' ';
+ 
+    cout << endl;
+ 
+
+ 
+    return 0;
+}
